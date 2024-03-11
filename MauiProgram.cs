@@ -66,10 +66,4 @@ public static class MauiProgram
 
         
 	}
-
-
-
-    
-
-
 }
