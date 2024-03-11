@@ -1,0 +1,25 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PlumbingCompany"
+             xmlns:views="clr-namespace:PlumbingCompany.Views"
+             x:Class="PlumbingCompany.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    <!--<Application.MainPage>
+        <Shell x:Name="Chtoto" FlyoutBehavior="Flyout" FlyoutHeaderBehavior="Fixed" FlyoutVerticalScrollMode="Auto">
+            <FlyoutItem Title="Job list">
+                <ShellContent ContentTemplate="{DataTemplate views:JobList}"/>
+            </FlyoutItem>
+            <FlyoutItem Title="Add Job">
+                <ShellContent ContentTemplate="{DataTemplate views:Page1_JobOrder}"/>
+            </FlyoutItem>
+        </Shell>
+    </Application.MainPage>-->
+</Application>                                      

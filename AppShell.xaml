@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PlumbingCompany.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PlumbingCompany"
+    xmlns:views="clr-namespace:PlumbingCompany.Views"
+    Title="SVI Industrial" TitleColor="White"
+    BackgroundColor="#284563"
+    Shell.FlyoutBehavior="Flyout">
+
+    <ShellContent ContentTemplate="{DataTemplate views:LoginPage}" Route="LoginPage"/>
+    <ShellContent ContentTemplate="{DataTemplate views:JobList}" Route="JobListFlyOut"/>
+
+    <!--<FlyoutItem Title="Jobs List" Route="JobListFlyOut">
+    
+
+    
+    </FlyoutItem>
+    <FlyoutItem Title="Add Job" Route="Add_Job">
+        <ShellContent ContentTemplate="{DataTemplate views:Page1_JobOrder}" Route="Page1_JobOrder"/>
+    </FlyoutItem>-->                                                                                                                            
+
+        
+
+                                                                  
+
+    <!--<FlyoutItem  Title="Jobs List">
+        <ShellContent Title="Job list" ContentTemplate="{DataTemplate views:JobList}" Route="JobList"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Add Job">
+        <ShellContent Title="Add Job" ContentTemplate="{DataTemplate views:Page1_JobOrder}" Route="Page1_JobOrder"/>
+    </FlyoutItem>-->
+
+    <!--<ShellContent  ContentTemplate="{DataTemplate views:Page2_PhotoUpload}" Route="Page2_PhotoUpload"/>-->
+    <!--<ShellContent ContentTemplate="{DataTemplate views:Page2_PhotoUpload}" Route="Page2_PhotoUpload"/>-->
+   
+
+
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:JobList}"
+        Route="MainPage" />-->
+
+</Shell>
