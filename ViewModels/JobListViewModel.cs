@@ -312,15 +312,6 @@ namespace PlumbingCompany.Data
             WebPageButtonPlace = 2;
         }
 
-
-        //Page1Data send = new Page1Data()
-        //{
-        //    Id = 1,
-        //    JobOrder = "Un, doi, trei",
-        //    Customer = "suntem de la Orhei",
-        //    Item = "Orhei este Capitala lumii"
-        //};
-
         [RelayCommand]
         private async Task DeleteButtonTaped(Page1Data page1Data) 
         {
@@ -446,43 +437,5 @@ namespace PlumbingCompany.Data
                 return;
             }
         }
-        //[RelayCommand]
-        //public void GetJobs()
-        //{
-        //     SendPage1Data = _jobService.GetJobList();
-        //}
-
-
-        //[RelayCommand]
-        //public async Task EditOrDeleteRecord()
-        //{
-        //    GlobalVariables.CurrentID = Jobs.Select(id => id.Id).FirstOrDefault();
-        //    GlobalVariables.CurrentID = Jobs.FirstOrDefault(id => id.Id == )
-        //    await Shell.Current.GoToAsync("//JobListFlyOut/Page1_JobOrder");
-        //}
-
-
-        //[RelayCommand]
-        //public async void EditTapped(Page1Data page1Data)
-        //{
-        //    var navParam =  new Dictionary<string, object>();
-        //    navParam.Add("GetRecordId", page1Data.Id);
-        //    await Shell.Current.GoToAsync("//JobListFlyOut/Page1_JobOrder", navParam);
-        //}
-
-
-
-
-
-        //public ICommand OnCollectionViewSelectionChanged => new Command<Page1Data>(async (oncollectionViewSelectionChangedFunc) =>
-        //{
-
-        //    var navPar = new Dictionary<string, object>
-        //    {
-        //        {"JobDetail", oncollectionViewSelectionChangedFunc}
-        //    };
-
-        //    await AppShell.Current.GoToAsync("//JobListFlyOut/Page1_JobOrder", navPar);
-        //});
     }
 }
