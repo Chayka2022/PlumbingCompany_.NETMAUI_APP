@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:PlumbingCompany.Models"
+             xmlns:viewModels="clr-namespace:PlumbingCompany.Data"
+             x:DataType="viewModels:JobListViewModel"
+             x:Class="PlumbingCompany.Views.JobList"
+             Title="Job List"
+             Shell.FlyoutBehavior="Disabled">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <StackLayout Padding="20">
+                <Grid ColumnSpacing="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Create New Job" Command="{Binding CreateNewJobCommand}" Background="#a3211b" IsEnabled="{Binding Sending}"/>
+                    <Button Grid.Column="1" Text="Synchronize all" Command="{Binding SendAllRecordsToServerCommand}" Background="#286328" IsEnabled="{Binding Sending}"/>
+                    <Label Grid.Column="{Binding SyncronizrionLabelPlace}" Text="{Binding SendingProgress}" HorizontalOptions="End" VerticalOptions="Center" Background="Transparent" IsVisible="{Binding IsSeen}" Margin="0,0,50,0"/>
+                    <Button Grid.Column="{Binding WebPageButtonPlace}" Text="Open Web Page" Command="{Binding OpenWebPageCommand}" Background="#284563" IsVisible="{Binding ButtonIsSeen}"/>
+                </Grid>
+                <ActivityIndicator IsRunning="True" IsVisible="{Binding IsBusy}"/>
+                <CollectionView 
+                                Margin="0,10,0,10"
+                                ItemsSource="{Binding Jobs}"   
+                                SelectionMode="Single"
+                                SelectionChanged="EditRecord"
+                                x:Name="JLViewModel"
+                                IsEnabled="{Binding Sending}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Page1Data">
+                            <Border Margin="10" Padding="10" HeightRequest="185" BackgroundColor="#eaecef">
+                                <StackLayout Margin="10">
+                                    <Label Text="{Binding JobOrder, StringFormat='Job #: {0}'}" FontSize="16"/>
+                                    <Label Text="{Binding Item, StringFormat='Item #: {0}'}" FontSize="16"/>
+                                    <Label Text="{Binding Customer, StringFormat='Customer: {0}'}" FontSize="16" />
+                                    <Label Text=" " FontSize="16"></Label>
+                                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="100">
+                                        <Button
+                                                Text="Delete"
+                                                Background="#a3211b"
+                                                HorizontalOptions="Start"
+                                                Command="{Binding Path=BindingContext.DeleteButtonTapedCommand, Source={x:Reference JLViewModel}}"                             
+                                                CommandParameter="{Binding .}"
+                                                />
+                                        <Button Text="Send to Server" VerticalOptions="End" Command="{Binding Path=BindingContext.SendPage1DataCommand, Source={x:Reference JLViewModel}}"
+                                                CommandParameter="{Binding .}" Background="#284563" IsVisible="{Binding isntSynchronized}"/>
+                                        <Label TextColor="#286328" Text="Synchronized✔" IsVisible="{Binding isSynchronized}" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                </StackLayout>
+                                <!--<Label Text="{Binding Id, StringFormat='ID: {0}'}"/>-->
+                                <!--<Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding  Source={x:RelativeSource AncestorType={x:Type viewModels:JobListViewModel}}, Path=EditTappedCommand}" CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>-->
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <VerticalStackLayout>
+                    <Button Text="Logout" Command="{Binding LogoutCommand}" HorizontalOptions="Start" Margin="30" Background="#284563" IsVisible="False"/>
+                    <Button Text="Delete all records" Background="#a3211b" Command="{Binding DeleteAllRecordsCommand}" HorizontalOptions="End" Margin="0,5,20,0" IsEnabled="{Binding Sending}"/>
+                </VerticalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
