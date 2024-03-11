@@ -117,11 +117,5 @@ namespace PlumbingCompany.Data
         {
             await _jobService.CreateTables();
         }
-
-        //[RelayCommand]
-        //async Task GetUserCheckData()
-        //{
-        //    UserCheck = _jobService.GetLoginData(1);
-        //}
     }
 }
