@@ -9,7 +9,7 @@ public partial class JobList : ContentPage
 
 	private JobListViewModel _viewModel; 
 
-    public JobList(JobListViewModel viewModel)
+    	public JobList(JobListViewModel viewModel)
 	{
 		InitializeComponent();
 		_viewModel = viewModel;
@@ -23,7 +23,7 @@ public partial class JobList : ContentPage
 	}
 
 	async void EditRecord(object sender, SelectionChangedEventArgs e)
-    {
+    	{
 		if (GlobalVariables.CurrentID != 0)
 		{
 			GlobalVariables.CurrentID = 0;
@@ -39,9 +39,5 @@ public partial class JobList : ContentPage
 		{
 			return;
 		}
-        //var navParam = new Dictionary<string, object>();
-        //navParam.Add("PassingID", page1Data);
-        //GlobalVariables.CurrentID = Jobs.Select(id => id.Id).FirstOrDefault();				
      }
-
 } 
