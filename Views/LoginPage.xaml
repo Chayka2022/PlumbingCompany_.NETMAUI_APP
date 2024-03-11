@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlumbingCompany.Views.LoginPage"
+             xmlns:models="clr-namespace:PlumbingCompany.Models"
+             xmlns:viewModels="clr-namespace:PlumbingCompany.Data"
+             x:DataType="viewModels:LoginPageViewModel"             
+             Title="Welcome To SVI Industrial Application!"
+             Shell.FlyoutBehavior="Disabled">
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center" Padding="30">
+
+            <StackLayout Margin="0,40,0,0">
+                <Label 
+                    Text="Login To Continue"
+                    FontSize="30" HorizontalOptions="Fill" 
+                    HorizontalTextAlignment="Center" 
+                    BackgroundColor="#284563" 
+                    TextColor="White"/>
+            </StackLayout>
+
+
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="50" Spacing="13" Background="#eaecef">
+                <Label 
+                    IsEnabled="{Binding IsEnabled}"
+                    Text="Username"
+                    HorizontalOptions="Start"
+                    FontSize="Micro"/>
+                <Entry 
+                    IsEnabled="{Binding IsEnabled}"
+                    Placeholder="Enter Login"
+                    Text="{Binding NickName}"
+                    HeightRequest="40"/>
+                <Label
+                    IsEnabled="{Binding IsEnabled}"
+                    Text="Password"
+                    HorizontalOptions="Start"
+                    FontSize="Micro"
+                    />
+                <Entry
+                    IsEnabled="{Binding IsEnabled}"
+                    Placeholder="Enter Password"
+                    IsPassword="True"
+                    Text="{Binding Password}"
+                    HeightRequest="40"/>
+            </StackLayout>
+            <StackLayout Background="#eaecef">
+                <Button CornerRadius="0" BorderColor="White" HorizontalOptions="FillAndExpand" Text="Sign In" Command="{Binding JobListGoToCommand}" IsEnabled="True" Background="#a3211b"/>
+            </StackLayout>
+
+            <StackLayout Padding="15">
+                <Image Source="svilogo.png"
+                       HeightRequest="200"
+                       WidthRequest="300"
+                       HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+                <Label MinimumHeightRequest="200"/>
+            </StackLayout>
+
+            <!--<StackLayout>
+                <Label 
+                    
+                    Text="Made by Kolosov and Chaicovskii @Limited Liability Partnership."
+                    HorizontalOptions="Center"
+                    TextColor="DarkGray"/>
+            </StackLayout>-->
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
