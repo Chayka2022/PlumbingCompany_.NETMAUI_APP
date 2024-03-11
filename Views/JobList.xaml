@@ -51,10 +51,6 @@
                                         <Label TextColor="#286328" Text="Synchronized✔" IsVisible="{Binding isSynchronized}" VerticalOptions="Center"/>
                                     </HorizontalStackLayout>
                                 </StackLayout>
-                                <!--<Label Text="{Binding Id, StringFormat='ID: {0}'}"/>-->
-                                <!--<Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding  Source={x:RelativeSource AncestorType={x:Type viewModels:JobListViewModel}}, Path=EditTappedCommand}" CommandParameter="{Binding .}"/>
-                                </Frame.GestureRecognizers>-->
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
